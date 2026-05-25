@@ -16,7 +16,6 @@ export function DashboardView({ guests, dashboard }) {
                 <th>Entrada</th>
                 <th>Fondo</th>
                 <th>Postre</th>
-                <th>Notas</th>
               </tr>
             </thead>
             <tbody>
@@ -29,7 +28,6 @@ export function DashboardView({ guests, dashboard }) {
                   <td>{g.entrada || '—'}</td>
                   <td>{g.fondo || '—'}</td>
                   <td>{g.postre || '—'}</td>
-                  <td>{g.notes || '—'}</td>
                 </tr>
               ))}
             </tbody>

@@ -45,15 +45,6 @@ export function GuestCard({ guest, updateGuest, removeGuest }) {
         options={menuOptions.postre}
         onChange={(v) => updateGuest(guest.id, 'postre', v)}
       />
-
-      <label>
-        Notas / alergias
-        <input
-          value={guest.notes}
-          onChange={(e) => updateGuest(guest.id, 'notes', e.target.value)}
-          placeholder="Ej: sin cebolla"
-        />
-      </label>
     </article>
   );
 }

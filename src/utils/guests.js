@@ -8,7 +8,6 @@ export function createGuest(number) {
     entrada: '',
     fondo: '',
     postre: '',
-    notes: '',
   };
 }
 
@@ -26,7 +25,6 @@ export function normalizeGuests(guests) {
     entrada: guest.entrada || '',
     fondo: guest.fondo || '',
     postre: guest.postre || '',
-    notes: guest.notes || '',
   }));
 }
 
