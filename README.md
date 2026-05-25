@@ -8,6 +8,9 @@ Aplicación web para registrar y gestionar el menú de cada invitado de un matri
 
 ## Capturas
 
+### Landing
+![Home](docs/home.png)
+
 ### Registro de invitados
 ![Registro](docs/registro.png)
 
@@ -16,6 +19,14 @@ Aplicación web para registrar y gestionar el menú de cada invitado de un matri
 
 ### Dashboard de resultados
 ![Dashboard](docs/dashboard.png)
+
+### Responsive — Registro y Carta
+
+| | |
+|---|---|
+| ![Registro móvil](docs/register-responsive.png) | ![Carta móvil 1](docs/carta-responsive-1.png) |
+
+![Carta móvil 2](docs/carta-responsive-2.png)
 
 ---
 
