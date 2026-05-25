@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { collection, deleteDoc, doc, onSnapshot, setDoc } from 'firebase/firestore';
 import { auth, db } from './firebase.js';
-import { countByField, createGuest, createInitialGuests } from './utils/guests.js';
+import { countByField, createGuest } from './utils/guests.js';
 import { CartaView } from './components/CartaView.jsx';
 import { DashboardView } from './components/DashboardView.jsx';
 import { Header } from './components/Header.jsx';
@@ -33,12 +33,7 @@ export default function App() {
   useEffect(() => {
     if (!user) return;
 
-    const unsubscribe = onSnapshot(collection(db, 'guests'), async (snapshot) => {
-      if (snapshot.empty) {
-        const initial = createInitialGuests();
-        await Promise.all(initial.map((g) => setDoc(doc(db, 'guests', g.id), g)));
-        return;
-      }
+    const unsubscribe = onSnapshot(collection(db, 'guests'), (snapshot) => {
       const data = snapshot.docs
         .map((d) => ({ ...d.data() }))
         .sort((a, b) => a.number - b.number);
