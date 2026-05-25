@@ -590,24 +590,210 @@ textarea:focus {
 
 /* ── RESPONSIVE ────────────────────────────────── */
 
-@media (max-width: 900px) {
-  .stats,
-  .guest-grid,
-  .dashboard {
-    grid-template-columns: 1fr;
+/* Tablet: 2 columnas */
+@media (max-width: 1024px) {
+  .guest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móvil grande (≤ 768px) */
+@media (max-width: 768px) {
+  .app {
+    padding: 12px;
   }
 
-  .toolbar,
+  /* Hero */
   .hero {
     flex-direction: column;
+    padding: 24px 20px;
+    border-radius: 22px;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    margin: 10px 0 6px;
+  }
+
+  .hero p {
+    font-size: 13px;
   }
 
   .logout {
     width: 100%;
     text-align: center;
+    padding: 12px;
   }
 
+  /* Stats: 2x2 */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat strong {
+    font-size: 24px;
+  }
+
+  /* Tabs */
+  .tabs {
+    padding: 5px;
+    gap: 4px;
+  }
+
+  .tabs button {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .toolbar input,
+  .toolbar button {
+    width: 100%;
+  }
+
+  /* Guest grid: 1 columna */
+  .guest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dashboard: 1 columna */
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  /* Carta */
+  .carta-hero {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .carta-title {
+    font-size: 26px;
+  }
+
+  .category-header {
+    padding: 16px 18px;
+  }
+
+  .category-emoji {
+    width: 46px;
+    height: 46px;
+    font-size: 26px;
+    border-radius: 14px;
+  }
+
+  /* Login */
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 26px;
+  }
+}
+
+/* Móvil pequeño (≤ 480px) */
+@media (max-width: 480px) {
   .app {
-    padding: 12px;
+    padding: 10px;
+  }
+
+  /* Stats: 1 columna */
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat {
+    padding: 14px 16px;
+  }
+
+  .stat strong {
+    font-size: 22px;
+  }
+
+  .hero {
+    padding: 20px 16px;
+    margin-bottom: 14px;
+  }
+
+  .hero span {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  /* Tabs más compactos */
+  .tabs {
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+
+  .tabs button {
+    font-size: 12px;
+    padding: 9px 6px;
+    border-radius: 12px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 16px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  /* Inputs touch-friendly */
+  input,
+  select {
+    height: 48px;
+    font-size: 16px; /* evita zoom en iOS */
+  }
+
+  button {
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  /* Carta */
+  .category-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .category-emoji {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .category-title {
+    font-size: 17px;
+  }
+
+  .dish-card {
+    padding: 14px 16px;
+  }
+
+  .dish-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Login */
+  .login-logo {
+    width: 68px;
+    height: 68px;
+    font-size: 34px;
+  }
+
+  .login-card h1 {
+    font-size: 26px;
   }
 }
