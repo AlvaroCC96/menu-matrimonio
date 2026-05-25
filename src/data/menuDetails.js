@@ -13,12 +13,12 @@ export const menuDetails = {
     emoji: '🥤',
     subtitle: 'Una a elección',
     items: [
-      { name: 'Jugo natural de piña', description: 'Jugo fresco exprimido de piña natural.' },
-      { name: 'Limonada', description: 'Limonada artesanal con limón fresco y menta.' },
-      { name: 'Jugo natural de mango', description: 'Jugo fresco de mango tropical.' },
-      { name: 'Bebida', description: 'Bebida gaseosa a elección.' },
-      { name: 'Agua mineral', description: 'Agua mineral con o sin gas.' },
-      { name: 'Copa de vino', description: 'Copa de vino tinto o blanco de la casa.' },
+      { name: 'Jugo natural de piña' },
+      { name: 'Limonada' },
+      { name: 'Jugo natural de mango' },
+      { name: 'Bebida' },
+      { name: 'Agua mineral' },
+      { name: 'Copa de vino' },
     ],
   },
   entrada: {
@@ -64,9 +64,9 @@ export const menuDetails = {
     emoji: '🍰',
     subtitle: 'Uno a elección',
     items: [
-      { name: 'Crema volteada', description: 'Clásico postre de leche con caramelo, suave y cremoso.' },
-      { name: 'Suspiro limeño', description: 'Tradicional postre peruano de manjar blanco con merengue y canela.' },
-      { name: 'Torta de chocolate', description: 'Húmeda torta de chocolate con cobertura de ganache.' },
+      { name: 'Crema volteada' },
+      { name: 'Suspiro limeño' },
+      { name: 'Torta de chocolate' },
     ],
   },
 };
