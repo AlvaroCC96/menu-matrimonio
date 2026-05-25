@@ -10,6 +10,167 @@ body {
   color: #3d1a24;
 }
 
+/* ── HOME ──────────────────────────────────────── */
+
+.home-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: linear-gradient(150deg, #ffd6df 0%, #ffe8d6 55%, #fef3c7 100%);
+}
+
+.home-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(244, 114, 182, 0.2);
+  border-radius: 36px;
+  padding: 44px 40px;
+  text-align: center;
+  box-shadow: 0 32px 90px rgba(225, 29, 72, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.home-rings {
+  font-size: 52px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 10px rgba(225, 29, 72, 0.2));
+}
+
+.home-label {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #c0788a;
+}
+
+.home-names {
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: clamp(32px, 8vw, 52px);
+  font-weight: 900;
+  line-height: 1;
+  color: #3d1a24;
+}
+
+.home-ampersand {
+  background: linear-gradient(120deg, #e11d48, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.75em;
+}
+
+.home-fullnames {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: #9f5060;
+  line-height: 1.7;
+}
+
+.home-date-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 18px 24px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #fff0f3, #fff7f0);
+  border: 1px solid rgba(244, 114, 182, 0.15);
+}
+
+.home-date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.home-date-item strong {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(120deg, #e11d48, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-date-item span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #c0788a;
+}
+
+.home-date-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(244, 114, 182, 0.25);
+  border-radius: 999px;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-btn-primary {
+  width: 100%;
+  padding: 15px;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 800;
+  background: linear-gradient(120deg, #e11d48, #f97316);
+  color: white;
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.28);
+}
+
+.home-btn-secondary {
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  background: transparent;
+  color: #9f5060;
+  border: 1.5px solid rgba(244, 114, 182, 0.3);
+  box-shadow: none;
+}
+
+.home-btn-secondary:hover {
+  background: #fff0f3;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.btn-volver {
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+}
+
+.public-carta-bar {
+  display: flex;
+  margin-bottom: 4px;
+}
+
+.public-carta-bar .btn-volver {
+  width: auto;
+  margin: 0;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
 /* ── LOGIN ─────────────────────────────────────── */
 
 .login-page {

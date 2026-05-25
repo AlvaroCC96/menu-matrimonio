@@ -1,4 +1,4 @@
-export function LoginScreen({ email, setEmail, password, setPassword, loginError, onLogin }) {
+export function LoginScreen({ email, setEmail, password, setPassword, loginError, onLogin, onBack }) {
   return (
     <main className="login-page">
       <section className="login-card">
@@ -24,6 +24,11 @@ export function LoginScreen({ email, setEmail, password, setPassword, loginError
           {loginError && <small>{loginError}</small>}
           <button type="submit">Entrar</button>
         </form>
+        {onBack && (
+          <button className="home-btn-secondary btn-volver" onClick={onBack}>
+            ← Volver
+          </button>
+        )}
       </section>
     </main>
   );

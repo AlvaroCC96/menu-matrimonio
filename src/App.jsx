@@ -6,6 +6,7 @@ import { countByField, createGuest } from './utils/guests.js';
 import { CartaView } from './components/CartaView.jsx';
 import { DashboardView } from './components/DashboardView.jsx';
 import { Header } from './components/Header.jsx';
+import { HomeScreen } from './components/HomeScreen.jsx';
 import { LoginScreen } from './components/LoginScreen.jsx';
 import { RegisterView } from './components/RegisterView.jsx';
 import { Stat } from './components/Stat.jsx';
@@ -14,6 +15,7 @@ import { Tabs } from './components/Tabs.jsx';
 export default function App() {
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
+  const [screen, setScreen] = useState('home'); // 'home' | 'carta-publica' | 'login'
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -94,14 +96,37 @@ export default function App() {
   }
 
   if (!user) {
+    if (screen === 'carta-publica') {
+      return (
+        <div className="app">
+          <div className="public-carta-bar">
+            <button className="home-btn-secondary btn-volver" onClick={() => setScreen('home')}>
+              ← Volver
+            </button>
+          </div>
+          <CartaView />
+        </div>
+      );
+    }
+
+    if (screen === 'login') {
+      return (
+        <LoginScreen
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          loginError={loginError}
+          onLogin={login}
+          onBack={() => setScreen('home')}
+        />
+      );
+    }
+
     return (
-      <LoginScreen
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        loginError={loginError}
-        onLogin={login}
+      <HomeScreen
+        onViewCarta={() => setScreen('carta-publica')}
+        onLogin={() => setScreen('login')}
       />
     );
   }
