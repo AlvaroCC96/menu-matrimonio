@@ -1,114 +1,101 @@
-# Menú Matrimonio Dashboard
+# 💍 Menú Matrimonio
 
-Aplicación web hecha con React + Vite para registrar el menú que elegirá cada invitado de un matrimonio.
+Aplicación web para registrar y gestionar el menú de cada invitado de un matrimonio. Desarrollada con React + Vite, Firebase Auth y Firestore en tiempo real.
 
-No usa base de datos. Los datos viven en memoria mientras usas la app y se pueden exportar/importar como archivo JSON.
+**[Ver app en vivo →](https://alvarocc96.github.io/menu-matrimonio/)**
+
+---
+
+## Capturas
+
+### Registro de invitados
+![Registro](docs/registro.png)
+
+### Carta del menú
+![Carta](docs/carta.png)
+
+### Dashboard de resultados
+![Dashboard](docs/dashboard.png)
+
+---
 
 ## Funcionalidades
 
-- Registro de invitados.
-- 20 invitados precargados.
-- Agregar y eliminar invitados.
-- Selectores para:
-  - Aperitivo
-  - Bebida
-  - Entrada
-  - Fondo
-  - Postre
-- Campo de notas o alergias.
-- Dashboard con conteo automático por opción.
-- Vista JSON editable.
-- Exportar JSON.
-- Cargar JSON.
-- Diseño responsive para celular.
+- 🔐 **Login con Firebase Auth** — acceso con email y contraseña
+- 👥 **Registro de invitados** — agrega, edita y elimina invitados
+- 🍽️ **Selección de menú** — aperitivo, bebida, entrada, fondo y postre
+- 📋 **Carta detallada** — descripción completa de cada plato
+- 📊 **Dashboard en tiempo real** — tabla resumen y conteos por opción
+- ☁️ **Sincronización en la nube** — datos guardados en Firestore, accesible desde cualquier dispositivo
+- 📱 **Responsive** — funciona en móvil y escritorio
 
-## Requisitos
+## Stack
 
-Necesitas tener instalado:
+| Tecnología | Uso |
+|---|---|
+| React + Vite | Frontend |
+| Firebase Auth | Autenticación |
+| Cloud Firestore | Base de datos en tiempo real |
+| GitHub Actions | Deploy automático |
+| GitHub Pages | Hosting |
 
-- Node.js 18 o superior
-- npm
-
-Puedes revisar tu versión con:
+## Desarrollo local
 
 ```bash
-node -v
-npm -v
-```
-
-## Instalación
-
-Entra a la carpeta del proyecto:
-
-```bash
+# Clonar el repo
+git clone https://github.com/AlvaroCC96/menu-matrimonio.git
 cd menu-matrimonio
-```
 
-Instala las dependencias:
-
-```bash
+# Instalar dependencias
 npm install
-```
 
-## Ejecutar en local
+# Crear archivo de entorno
+cp .env.example .env
+# → Completa las variables con tu config de Firebase
 
-Levanta el proyecto con:
-
-```bash
+# Levantar servidor de desarrollo
 npm run dev
 ```
 
-Luego abre en el navegador la URL que muestre Vite, normalmente:
+## Variables de entorno
 
-```bash
-http://localhost:5173
+Crea un archivo `.env` basado en `.env.example` con tu configuración de Firebase:
+
+```env
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
 ```
-
-## Compilar para producción
-
-```bash
-npm run build
-```
-
-Esto generará una carpeta `dist/` lista para subir a hosting.
-
-## Previsualizar build
-
-```bash
-npm run preview
-```
-
-## Cómo guardar la información
-
-1. Completa los menús de los invitados.
-2. Ve a la pestaña `JSON` o presiona `Exportar JSON`.
-3. Descarga el archivo `menus-matrimonio.json`.
-4. Para recuperar los datos después, copia el contenido del JSON en la pestaña `JSON` y presiona `Cargar JSON`.
 
 ## Estructura del proyecto
 
-```txt
-menu-matrimonio/
-├── index.html
-├── package.json
-├── README.md
-└── src/
-    ├── main.jsx
-    └── styles.css
+```
+src/
+├── main.jsx                  # Entry point
+├── App.jsx                   # Lógica principal + Firebase
+├── styles.css                # Estilos globales
+├── firebase.js               # Configuración Firebase
+├── data/
+│   ├── menuOptions.js        # Opciones de cada categoría
+│   └── menuDetails.js        # Descripciones de los platos
+├── utils/
+│   └── guests.js             # Helpers de invitados
+└── components/
+    ├── LoginScreen.jsx
+    ├── Header.jsx
+    ├── Tabs.jsx
+    ├── Stat.jsx
+    ├── SelectField.jsx
+    ├── GuestCard.jsx
+    ├── RegisterView.jsx
+    ├── DashboardView.jsx
+    ├── Counter.jsx
+    └── CartaView.jsx
 ```
 
-## Personalizar opciones del menú
+## Personalizar el menú
 
-Las opciones están en `src/main.jsx`, dentro del objeto:
-
-```js
-const menuOptions = {
-  aperitivo: [],
-  bebida: [],
-  entrada: [],
-  fondo: [],
-  postre: [],
-};
-```
-
-Puedes editar esos arrays para agregar, quitar o cambiar platos.
+Edita [`src/data/menuOptions.js`](src/data/menuOptions.js) para cambiar las opciones de cada categoría, y [`src/data/menuDetails.js`](src/data/menuDetails.js) para actualizar las descripciones de los platos.
