@@ -60,8 +60,8 @@ export default function App() {
   const updateGuest = (id, field, value) =>
     setDoc(doc(db, 'guests', id), { [field]: value }, { merge: true });
 
-  const addGuest = () => {
-    const g = createGuest(guests.length + 1);
+  const addGuest = (data = {}) => {
+    const g = { ...createGuest(guests.length + 1), ...data };
     return setDoc(doc(db, 'guests', g.id), g);
   };
 
