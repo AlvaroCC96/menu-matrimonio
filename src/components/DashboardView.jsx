@@ -1,10 +1,16 @@
 import { Counter } from './Counter.jsx';
+import { exportToExcel } from '../utils/exportExcel.js';
 
 export function DashboardView({ guests, dashboard }) {
   return (
     <main className="dashboard">
       <section className="panel full">
-        <h2>Qué pidió cada persona</h2>
+        <div className="dashboard-panel-header">
+          <h2>Qué pidió cada persona</h2>
+          <button className="btn-excel" onClick={() => exportToExcel(guests, dashboard)}>
+            ⬇ Exportar Excel
+          </button>
+        </div>
         <div className="table-wrap">
           <table>
             <thead>

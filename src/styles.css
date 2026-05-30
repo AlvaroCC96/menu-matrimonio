@@ -706,9 +706,30 @@ label select {
 }
 
 .panel h2 {
-  margin: 0 0 16px;
+  margin: 0;
   font-size: 19px;
   color: #3d1a24;
+}
+
+.dashboard-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-excel {
+  background: linear-gradient(120deg, #16a34a, #15803d);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.28);
+  padding: 10px 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-excel:hover {
+  box-shadow: 0 8px 22px rgba(22, 163, 74, 0.38);
 }
 
 .counter {
